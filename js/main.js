@@ -28,7 +28,7 @@ const i18n = {
     "about.eyebrow": "// 02 — about me",
     "about.title": "ผม Alex<br>dev ที่ไม่ยอม<br>ให้งาน<em>ดูห่วย</em>",
     "about.p1": "5+ ปีที่ build digital products มา ตั้งแต่ startup เล็กๆ จนถึงองค์กรระดับใหญ่ สิ่งที่ยึดมาตลอดคือ — ถ้า code ดีแต่หน้าตาแย่ มันก็ยังไม่ดีพอ",
-    "about.p2": "ไม่ว่าจะเป็นงานใหม่ตั้งแต่ศูนย์ หรือ redesign ระบบที่มีอยู่แล้ว ผมเน้นความเรียบง่าย ความเร็ว และประสบการณ์ใช้งานที่รู้สึกได้ว่า "ลื่น"",
+    "about.p2": "ไม่ว่าจะเป็นงานใหม่ตั้งแต่ศูนย์ หรือ redesign ระบบที่มีอยู่แล้ว ผมเน้นความเรียบง่าย ความเร็ว และประสบการณ์ใช้งานที่รู้สึกได้ว่า “ลื่น”",
     "about.stat1": "ปีที่ build digital products",
     "about.stat2": "Projects ที่ส่ง production ไปแล้ว",
     "about.stat3": "งานทุกชิ้นต้องผ่านตัวเองก่อน — ไม่ปล่อย half-baked",
@@ -135,30 +135,23 @@ const skills = [
 
 const stack = ["React", "Next.js", "Node.js", "TypeScript", "Python", "Figma", "PostgreSQL"];
 
-// ─────────────────────────────────────────────────────────
-// PROJECTS: อ่านจาก localStorage (ที่ admin เซฟไว้)
-// ถ้ายังไม่มีจะใช้ default
-// ─────────────────────────────────────────────────────────
-const defaultProjects = [
+const projects = [
   {
-    id: 1,
     year: "2025",
-    emoji: "🗂️",
-    bg: "#e8f0fe",
     title: { th: "Portfolio CMS", en: "Portfolio CMS" },
     desc: {
-      th: "ระบบพอร์ตโฟลิโอที่เชื่อมกับ Admin panel เพื่อแก้เนื้อหาได้เองโดยไม่ต้องยุ่งกับโค้ดทุกครั้ง",
-      en: "A portfolio system connected to an admin panel so content can be updated without touching code every time."
+      th: "ระบบพอร์ตโฟลิโอที่เชื่อมกับ Google Sheets / Admin panel เพื่อแก้เนื้อหาได้เองโดยไม่ต้องยุ่งกับโค้ดทุกครั้ง",
+      en: "A portfolio system connected to Google Sheets and an admin panel so content can be updated without touching code every time."
     },
-    tags: ["Next.js", "Admin", "CMS"],
+    tags: ["Next.js", "GSheets", "Admin"],
     status: "live",
-    link: "#contact"
+    links: {
+      demo: "#contact",
+      case: "#contact"
+    }
   },
   {
-    id: 2,
     year: "2024",
-    emoji: "🧾",
-    bg: "#ecfdf5",
     title: { th: "Fuel Receipt System", en: "Fuel Receipt System" },
     desc: {
       th: "ระบบสแกนใบเสร็จและบันทึกข้อมูลเติมน้ำมัน ลดงาน manual และช่วยจัดสต็อกข้อมูลให้เป็นระเบียบ",
@@ -166,13 +159,13 @@ const defaultProjects = [
     },
     tags: ["OCR", "Apps Script", "Workflow"],
     status: "deployed",
-    link: "#contact"
+    links: {
+      demo: "#contact",
+      case: "#contact"
+    }
   },
   {
-    id: 3,
     year: "2024",
-    emoji: "📊",
-    bg: "#fef3c7",
     title: { th: "Internal Dashboard", en: "Internal Dashboard" },
     desc: {
       th: "แดชบอร์ดสำหรับทีมปฏิบัติการที่เน้นอ่านง่าย ตัด noise ออก และโชว์ข้อมูลสำคัญแบบทันที",
@@ -180,13 +173,13 @@ const defaultProjects = [
     },
     tags: ["Dashboard", "UX", "Data"],
     status: "optimized",
-    link: "#contact"
+    links: {
+      demo: "#contact",
+      case: "#contact"
+    }
   },
   {
-    id: 4,
     year: "2023",
-    emoji: "🎨",
-    bg: "#f7e8df",
     title: { th: "Creative Landing Page", en: "Creative Landing Page" },
     desc: {
       th: "หน้า landing page ที่ใช้ visual system ชัดเจน เน้น conversion แต่ยังคงบุคลิกของแบรนด์ไว้ครบ",
@@ -194,32 +187,12 @@ const defaultProjects = [
     },
     tags: ["Brand", "Motion", "Conversion"],
     status: "delivered",
-    link: "#contact"
+    links: {
+      demo: "#contact",
+      case: "#contact"
+    }
   }
 ];
-
-// อ่าน projects จาก admin localStorage — ถ้ามีให้ใช้ของ admin
-function getProjectsForSite() {
-  try {
-    const stored = localStorage.getItem('portfolio_projects');
-    if (stored) {
-      const adminProjects = JSON.parse(stored);
-      // แปลงจาก admin format → site format
-      return adminProjects.map(p => ({
-        id: p.id,
-        year: p.year || "2024",
-        emoji: p.emoji || "💻",
-        bg: p.bg || "#f0ede6",
-        title: { th: p.title, en: p.title },
-        desc: { th: p.desc || "", en: p.desc || "" },
-        tags: p.tags || [],
-        status: "live",
-        link: p.link || "#contact"
-      }));
-    }
-  } catch (e) {}
-  return defaultProjects;
-}
 
 const processSteps = [
   {
@@ -275,12 +248,16 @@ const state = {
 const htmlEl = document.documentElement;
 
 function getThemeLabel() {
-  if (state.lang === "th") return state.theme === "dark" ? "มืด" : "สว่าง";
+  if (state.lang === "th") {
+    return state.theme === "dark" ? "มืด" : "สว่าง";
+  }
   return state.theme === "dark" ? "Dark" : "Light";
 }
 
 function getThemeAriaLabel() {
-  if (state.lang === "th") return state.theme === "dark" ? "เปลี่ยนเป็นธีมสว่าง" : "เปลี่ยนเป็นธีมมืด";
+  if (state.lang === "th") {
+    return state.theme === "dark" ? "เปลี่ยนเป็นธีมสว่าง" : "เปลี่ยนเป็นธีมมืด";
+  }
   return state.theme === "dark" ? "Switch to light theme" : "Switch to dark theme";
 }
 
@@ -293,7 +270,6 @@ function updateThemeButton() {
   themeToggle.setAttribute("aria-label", getThemeAriaLabel());
   themeToggle.setAttribute("aria-pressed", String(state.theme === "light"));
 }
-
 const navHam = document.getElementById("navHam");
 const navLinks = document.getElementById("navLinks");
 const themeToggle = document.getElementById("themeToggle");
@@ -350,7 +326,9 @@ function setLang(lang) {
 }
 
 function renderDynamicContent() {
-  heroStack.innerHTML = stack.map((item) => `<span class="chip">${item}</span>`).join("");
+  heroStack.innerHTML = stack
+    .map((item) => `<span class="chip">${item}</span>`)
+    .join("");
 }
 
 function projectStatusLabel(status) {
@@ -365,82 +343,87 @@ function projectStatusLabel(status) {
 
 function renderProjects() {
   if (!projectsGrid) return;
-  const projects = getProjectsForSite();
 
-  projectsGrid.innerHTML = projects.map((project) => {
-    const titleStr = typeof project.title === "object" ? project.title[state.lang] || project.title.th : project.title;
-    const descStr  = typeof project.desc  === "object" ? project.desc[state.lang]  || project.desc.th  : project.desc;
-    const linkHref = project.link || "#contact";
-
-    return `
+  projectsGrid.innerHTML = projects
+    .map((project) => `
       <article class="project-card reveal">
         <div class="project-top">
           <div>
-            <div class="project-year">${project.year || "2024"}</div>
-            <h3 class="project-title">${titleStr}</h3>
+            <div class="project-year">${project.year}</div>
+            <h3 class="project-title">${project.title[state.lang]}</h3>
           </div>
-          <div class="project-status">${projectStatusLabel(project.status || "live")}</div>
+          <div class="project-status">${projectStatusLabel(project.status)}</div>
         </div>
-        <p class="project-desc">${descStr}</p>
+
+        <p class="project-desc">${project.desc[state.lang]}</p>
+
         <div class="project-meta">
-          ${(project.tags || []).map((tag) => `<span class="meta-tag">${tag}</span>`).join("")}
+          ${project.tags.map((tag) => `<span class="meta-tag">${tag}</span>`).join("")}
         </div>
+
         <div class="project-footer">
-          <a href="${linkHref}" class="project-link">${t("projects.cta1")} <span aria-hidden="true">→</span></a>
-          <a href="#contact" class="project-link secondary">${t("projects.cta2")} <span aria-hidden="true">→</span></a>
+          <a href="${project.links.case}" class="project-link">${t("projects.cta1")} <span aria-hidden="true">→</span></a>
+          <a href="${project.links.demo}" class="project-link secondary">${t("projects.cta2")} <span aria-hidden="true">→</span></a>
         </div>
       </article>
-    `;
-  }).join("");
+    `)
+    .join("");
   observeReveals();
 }
 
 function renderProcess() {
   if (!processGrid) return;
-  processGrid.innerHTML = processSteps.map((step, index) => `
-    <article class="process-step reveal">
-      <div class="step-num">0${index + 1}</div>
-      <span class="step-icon" aria-hidden="true">${step.icon}</span>
-      <h3 class="step-name">${step.name[state.lang]}</h3>
-      <p class="step-desc">${step.desc[state.lang]}</p>
-      ${index < processSteps.length - 1 ? `<div class="step-arrow" aria-hidden="true">›</div>` : ""}
-    </article>
-  `).join("");
+  processGrid.innerHTML = processSteps
+    .map((step, index) => `
+      <article class="process-step reveal">
+        <div class="step-num">0${index + 1}</div>
+        <span class="step-icon" aria-hidden="true">${step.icon}</span>
+        <h3 class="step-name">${step.name[state.lang]}</h3>
+        <p class="step-desc">${step.desc[state.lang]}</p>
+        ${index < processSteps.length - 1 ? `<div class="step-arrow" aria-hidden="true">›</div>` : ""}
+      </article>
+    `)
+    .join("");
   observeReveals();
 }
 
 function renderSkills() {
   if (!skillsList) return;
-  skillsList.innerHTML = skills.map((skill) => `
-    <div class="skill-item">
-      <span class="skill-label">${skill.label[state.lang]}</span>
-      <div class="skill-track"><div class="skill-bar" data-pct="${skill.pct}"></div></div>
-      <span class="skill-pct">${skill.pct}%</span>
-    </div>
-  `).join("");
+  skillsList.innerHTML = skills
+    .map((skill) => `
+      <div class="skill-item">
+        <span class="skill-label">${skill.label[state.lang]}</span>
+        <div class="skill-track"><div class="skill-bar" data-pct="${skill.pct}"></div></div>
+        <span class="skill-pct">${skill.pct}%</span>
+      </div>
+    `)
+    .join("");
   animateSkills();
 }
 
 function renderContactSelect() {
   const select = document.getElementById("cf-type");
   if (!select) return;
-  select.innerHTML = formTypeOptions[state.lang].map((label, index) => {
-    const value = index === 0 ? "" : label;
-    return `<option value="${value}">${label}</option>`;
-  }).join("");
+  select.innerHTML = formTypeOptions[state.lang]
+    .map((label, index) => {
+      const value = index === 0 ? "" : label;
+      return `<option value="${value}">${label}</option>`;
+    })
+    .join("");
 }
 
 function renderContactInfo() {
-  if (!contactInfo) return;
-  contactInfo.innerHTML = contactRows.map((row) => `
-    <a class="contact-row" href="${row.href}" target="${row.href.startsWith("mailto:") ? "_self" : "_blank"}" rel="noreferrer">
-      <div class="contact-icon" aria-hidden="true">${row.icon}</div>
-      <div>
-        <div class="contact-lbl">${row.label}</div>
-        <div class="contact-val">${row.value}</div>
-      </div>
-    </a>
-  `).join("");
+  contactInfo.innerHTML = contactRows
+    .map((row) => `
+      <a class="contact-row" href="${row.href}" target="${row.href.startsWith("mailto:") ? "_self" : "_blank"}" rel="noreferrer">
+        <div class="contact-icon" aria-hidden="true">${row.icon}</div>
+        <div>
+          <div class="contact-lbl">${row.label}</div>
+          <div class="contact-val">${row.value}</div>
+        </div>
+      </a>
+    `)
+    .join("");
 }
 
 function observeReveals() {
@@ -472,6 +455,7 @@ function animateSkills() {
     },
     { threshold: 0.5 }
   );
+
   bars.forEach((bar) => skillObserver.observe(bar));
 }
 
@@ -489,28 +473,6 @@ function resetStatus(message, type = "ok") {
   }
 }
 
-// ─────────────────────────────────────────────────────────
-// SAVE CONTACT → localStorage → admin จะเห็น
-// ─────────────────────────────────────────────────────────
-function saveContactToAdmin(data) {
-  try {
-    const existing = JSON.parse(localStorage.getItem('portfolio_contacts') || '[]');
-    const newContact = {
-      id: Date.now(),
-      name: data.name,
-      company: data.company || '',
-      email: data.email,
-      type: data.type || '',
-      message: data.message,
-      date: new Date().toLocaleString('th-TH', { dateStyle: 'short', timeStyle: 'short' }),
-      read: false
-    };
-    existing.unshift(newContact);
-    localStorage.setItem('portfolio_contacts', JSON.stringify(existing));
-  } catch (e) {}
-}
-
-// ── EVENT LISTENERS ──
 if (navHam && navLinks) {
   navHam.addEventListener("click", () => {
     const isOpen = navLinks.classList.toggle("open");
@@ -548,26 +510,15 @@ if (form) {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const nameEl    = document.getElementById("cf-name");
-    const emailEl   = document.getElementById("cf-email");
-    const messageEl = document.getElementById("cf-message");
-    const companyEl = document.getElementById("cf-company");
-    const typeEl    = document.getElementById("cf-type");
+    const name = document.getElementById("cf-name");
+    const email = document.getElementById("cf-email");
+    const message = document.getElementById("cf-message");
 
-    const valid = nameEl.value.trim() && emailEl.value.trim() && messageEl.value.trim();
+    const valid = name.value.trim() && email.value.trim() && message.value.trim();
     if (!valid) {
       resetStatus(state.lang === "th" ? "กรุณากรอกช่องที่จำเป็นให้ครบก่อน" : "Please complete the required fields first.", "error");
       return;
     }
-
-    // บันทึกลง localStorage เพื่อให้ admin เห็น
-    saveContactToAdmin({
-      name:    nameEl.value.trim(),
-      company: companyEl ? companyEl.value.trim() : '',
-      email:   emailEl.value.trim(),
-      type:    typeEl ? typeEl.value : '',
-      message: messageEl.value.trim()
-    });
 
     resetStatus(state.lang === "th" ? "✓ ได้รับแล้ว! จะตอบกลับภายใน 24 ชั่วโมง" : "✓ Received. I will reply within 24 hours.", "ok");
     form.reset();
