@@ -1,218 +1,252 @@
 <!DOCTYPE html>
-<html lang="th" data-theme="dark">
+<html lang="th">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio — Full-Stack Creative Technologist" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Full-Stack Creative Technologist — Code ดี Design ดี ต้องไปด้วยกัน"/>
   <title>Alex.dev — Full-Stack Creative Technologist</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
-  <a class="skip-link" href="#content">ข้ามไปยังเนื้อหา</a>
 
-  <div class="bg-orb orb-1"></div>
-  <div class="bg-orb orb-2"></div>
-  <div class="bg-grid"></div>
+<!-- NAV -->
+<div class="nav-wrap">
+  <nav class="nav">
+    <a href="#home" id="navLogo" class="nav-logo">alex<span>.</span>dev</a>
+    <div id="navLinks" class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#process">Process</a>
+      <a href="#contact" class="nav-cta">คุยกัน</a>
+    </div>
+    <button id="navHam" class="nav-ham" aria-label="เปิดเมนู" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</div>
 
-  <header class="site-header">
-    <nav class="nav" id="mainNav" aria-label="Main navigation">
-      <a href="#home" class="nav-logo" aria-label="Alex.dev home">
-        alex.dev<sup>®</sup>
-      </a>
+<!-- ─── HERO ──────────────────────────────────────── -->
+<section id="home" style="position:relative;z-index:1">
+  <div class="hero">
 
-      <div class="nav-actions">
-        <button class="icon-btn" id="themeToggle" type="button" aria-label="เปลี่ยนธีม" aria-pressed="false">
-          <span class="icon-btn-mark" aria-hidden="true">◐</span>
-          <span class="icon-btn-text" data-i18n="nav.theme">Dark</span>
-        </button>
+    <div id="heroBadge" class="status-badge hero-eyebrow" id="heroAvail">
+      <span class="status-dot"></span>
+      <span>ว่างรับงาน — Let's build something sharp</span>
+    </div>
 
-        <button class="icon-btn" id="langToggle" type="button" aria-label="เปลี่ยนภาษา">
-          <span class="icon-btn-mark" aria-hidden="true">TH</span>
-          <span class="icon-btn-text">EN</span>
-        </button>
+    <h1 class="hero-title reveal" id="heroTitle">
+      ALEX<br>
+      <span class="stroke">CREATIVE</span><br>
+      <span class="accent">DEV</span>
+    </h1>
 
-        <button class="nav-hamburger" id="navHam" type="button" aria-label="เปิดเมนู" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
+    <div class="hero-sub-row">
+      <p class="hero-desc reveal reveal-d1">
+        Code ดี + Design ดี ต้องไปด้วยกัน — ผมทำตั้งแต่ concept, UX, development
+        จนถึง production โดยไม่ปล่อยให้งานดูธรรมดาเกินจำเป็น
+      </p>
+      <div class="hero-actions reveal reveal-d2">
+        <a href="#work" class="btn btn-yellow">ดูผลงาน →</a>
+        <a href="#contact" class="btn btn-outline">คุยกัน</a>
       </div>
+    </div>
+  </div>
+</section>
 
-      <div class="nav-links" id="navLinks">
-        <a href="#work" data-i18n="nav.work">งาน</a>
-        <a href="#about" data-i18n="nav.about">ตัวเอง</a>
-        <a href="#process" data-i18n="nav.process">วิธีทำ</a>
-        <a href="#contact" class="nav-cta" data-i18n="nav.contact">คุยกัน</a>
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-inner" id="tickerInner">
+    <span class="ticker-item"><span class="sep">✦</span>React</span>
+    <span class="ticker-item"><span class="sep">✦</span>Next.js</span>
+    <span class="ticker-item"><span class="sep">✦</span>Node.js</span>
+    <span class="ticker-item"><span class="sep">✦</span>TypeScript</span>
+    <span class="ticker-item"><span class="sep">✦</span>Python</span>
+    <span class="ticker-item"><span class="sep">✦</span>Figma</span>
+    <span class="ticker-item"><span class="sep">✦</span>PostgreSQL</span>
+    <span class="ticker-item"><span class="sep">✦</span>Google Sheets API</span>
+    <span class="ticker-item"><span class="sep">✦</span>React</span>
+    <span class="ticker-item"><span class="sep">✦</span>Next.js</span>
+    <span class="ticker-item"><span class="sep">✦</span>Node.js</span>
+    <span class="ticker-item"><span class="sep">✦</span>TypeScript</span>
+    <span class="ticker-item"><span class="sep">✦</span>Python</span>
+    <span class="ticker-item"><span class="sep">✦</span>Figma</span>
+    <span class="ticker-item"><span class="sep">✦</span>PostgreSQL</span>
+    <span class="ticker-item"><span class="sep">✦</span>Google Sheets API</span>
+  </div>
+</div>
+
+<!-- ─── WORK ───────────────────────────────────────── -->
+<section id="work">
+  <div class="container">
+    <div class="work-header">
+      <div>
+        <p class="section-label reveal">// 01 — Selected work</p>
+        <h2 class="section-title reveal reveal-d1">งานที่<br><em>โชว์</em>ได้</h2>
       </div>
-    </nav>
-  </header>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:10px">
+        <span class="gs-badge reveal reveal-d2">
+          <span class="gs-dot"></span>Live from Google Sheets
+        </span>
+        <a href="#contact" class="btn btn-outline btn-sm reveal reveal-d2">เริ่มคุยงาน →</a>
+      </div>
+    </div>
 
-  <main id="content">
-    <section class="hero" id="home">
-      <div class="hero-copy">
-        <div class="hero-badge reveal">
-          <span class="badge-dot"></span>
-          <span data-i18n="hero.badge">ว่างรับงานอยู่ — let's build something sharp</span>
+    <div id="projectsList" class="projects-list">
+      <div class="loading-row">
+        <div class="spinner"></div>
+        <span>กำลังโหลดจาก Google Sheets...</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ABOUT ──────────────────────────────────────── -->
+<section id="about">
+  <div class="container">
+    <p class="section-label reveal">// 02 — About me</p>
+    <div class="about-grid">
+
+      <!-- Numbers -->
+      <div class="about-numbers reveal">
+        <div class="num-block">
+          <div class="num-big">5+</div>
+          <div class="num-label">ปีที่ build<br>digital products</div>
         </div>
+        <div class="num-block">
+          <div class="num-big">30+</div>
+          <div class="num-label">Projects ที่ส่ง<br>production</div>
+        </div>
+        <div class="num-block" style="grid-column:span 2">
+          <div class="num-big" style="font-size:3.8rem">100%</div>
+          <div class="num-label">งานทุกชิ้นต้องผ่านตัวเองก่อน — ไม่ปล่อย half-baked ออกไป</div>
+        </div>
+      </div>
 
-        <h1 class="hero-title reveal" data-i18n-html="hero.title"></h1>
+      <!-- Text + skills -->
+      <div class="about-text">
+        <h2 class="section-title reveal">ผม Alex<br>dev ที่ไม่ยอม<br>ให้งาน<em>ดูห่วย</em></h2>
+        <div class="about-body reveal reveal-d1">
+          <p>5+ ปีที่ build digital products มา ตั้งแต่ startup เล็กๆ จนถึงองค์กรระดับใหญ่ สิ่งที่ยึดมาตลอดคือ — ถ้า code ดีแต่หน้าตาแย่ มันก็ยังไม่ดีพอ</p>
+          <p>ไม่ว่าจะเป็นงานใหม่ตั้งแต่ศูนย์ หรือ redesign ระบบที่มีอยู่แล้ว ผมเน้นความเรียบง่าย ความเร็ว และประสบการณ์ใช้งานที่รู้สึกได้ว่า "ลื่น"</p>
+        </div>
+        <div class="skills-wrap" id="skillsWrap">
+          <!-- rendered by JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <p class="hero-desc reveal" data-i18n="hero.desc"></p>
+<!-- ─── PROCESS ─────────────────────────────────────── -->
+<section id="process">
+  <div class="container">
+    <p class="section-label reveal">// 03 — How I work</p>
+    <h2 class="section-title reveal reveal-d1">วิธีทำงาน</h2>
+    <div class="process-grid" id="processGrid">
+      <!-- rendered by JS -->
+    </div>
+  </div>
+</section>
 
-        <div class="hero-actions reveal">
-          <a href="#work" class="btn btn-primary">
-            <span data-i18n="hero.ctaPrimary">ดูผลงาน</span>
-            <span aria-hidden="true">→</span>
+<!-- ─── CONTACT ─────────────────────────────────────── -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+
+      <div class="contact-left">
+        <p class="section-label reveal">// 04 — Let's work together</p>
+        <h2 class="section-title reveal reveal-d1">มีอะไร<br>อยู่ใน<em>หัว?</em></h2>
+        <p class="contact-subtext reveal reveal-d2">ส่งมาได้เลย ไม่ต้อง perfect ก่อนติดต่อ — คุยกันก่อนก็พอ</p>
+
+        <div class="contact-info-list reveal reveal-d2">
+          <a class="cinfo-row" href="mailto:alex@portfolio.dev" data-email="alex@portfolio.dev">
+            <div class="cinfo-icon">📧</div>
+            <div>
+              <div class="cinfo-label">Email</div>
+              <div class="cinfo-val" data-email="alex@portfolio.dev">alex@portfolio.dev</div>
+            </div>
           </a>
-          <a href="#contact" class="btn btn-secondary" data-i18n="hero.ctaSecondary">คุยกัน</a>
-        </div>
-
-        <div class="hero-stack reveal" id="heroStack"></div>
-      </div>
-
-      <div class="hero-visual reveal" aria-hidden="true">
-        <div class="hero-visual-card">
-          <div class="visual-ring ring-1"></div>
-          <div class="visual-ring ring-2"></div>
-          <div class="visual-ring ring-3"></div>
-
-          <div class="visual-center">
-            <span class="visual-center-num">5+</span>
-            <span class="visual-center-lbl" data-i18n="hero.centerLabel">Years</span>
-          </div>
-
-          <div class="visual-dot dot-1"></div>
-          <div class="visual-dot dot-2"></div>
-          <div class="visual-dot dot-3"></div>
-
-          <div class="floating-card card-a">
-            <span data-i18n="hero.cardA.label">UI / UX</span>
-            <strong data-i18n="hero.cardA.value">Clean systems</strong>
-          </div>
-          <div class="floating-card card-b">
-            <span data-i18n="hero.cardB.label">Code</span>
-            <strong data-i18n="hero.cardB.value">Production-ready</strong>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="work">
-      <div class="section-head reveal">
-        <div>
-          <p class="eyebrow" data-i18n="work.eyebrow">// 01 — selected work</p>
-          <h2 class="section-title" data-i18n-html="work.title"></h2>
-        </div>
-        <a href="#contact" class="btn btn-secondary" data-i18n="work.cta">เริ่มคุยงาน</a>
-      </div>
-
-      <div class="projects-grid" id="projectsGrid"></div>
-    </section>
-
-    <section class="section section-alt" id="about">
-      <div class="about-grid">
-        <div class="panel about-body">
-          <p class="eyebrow reveal" data-i18n="about.eyebrow">// 02 — about me</p>
-          <h2 class="section-title reveal" data-i18n-html="about.title"></h2>
-
-          <div class="section-divider reveal"></div>
-
-          <div class="reveal reveal-delay-1">
-            <p data-i18n="about.p1"></p>
-            <p data-i18n="about.p2"></p>
-          </div>
-
-          <div class="skills reveal reveal-delay-2" id="skillsList"></div>
-        </div>
-
-        <div class="panel about-stats reveal reveal-delay-2">
-          <div class="stat-block">
-            <div class="stat-num">5+</div>
-            <div class="stat-label" data-i18n="about.stat1">ปีที่ build digital products</div>
-          </div>
-          <div class="stat-block">
-            <div class="stat-num">30+</div>
-            <div class="stat-label" data-i18n="about.stat2">Projects ที่ส่ง production ไปแล้ว</div>
-          </div>
-          <div class="stat-block wide">
-            <div class="stat-num">100%</div>
-            <div class="stat-label" data-i18n="about.stat3">งานทุกชิ้นต้องผ่านตัวเองก่อน — ไม่ปล่อย half-baked</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="process">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow reveal" data-i18n="process.eyebrow">// 03 — how i work</p>
-          <h2 class="section-title reveal" data-i18n="process.title">วิธีทำงาน</h2>
-        </div>
-        <p class="section-sub reveal" data-i18n="process.sub"></p>
-      </div>
-
-      <div class="process-grid reveal" id="processGrid"></div>
-    </section>
-
-    <section class="section section-alt" id="contact">
-      <div class="contact-grid">
-        <div>
-          <p class="eyebrow reveal" data-i18n="contact.eyebrow">// 04 — let's work together</p>
-          <h2 class="section-title reveal" data-i18n-html="contact.title"></h2>
-          <div class="section-divider reveal"></div>
-          <p class="section-sub reveal" data-i18n="contact.sub"></p>
-
-          <div class="contact-info reveal reveal-delay-1" id="contactInfo"></div>
-        </div>
-
-        <form class="panel contact-form reveal reveal-delay-1" id="contactForm" novalidate>
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label" for="cf-name" data-i18n="form.name">ชื่อ *</label>
-              <input class="form-input" id="cf-name" type="text" placeholder="" required data-i18n-placeholder="form.namePh">
+          <a class="cinfo-row" href="https://github.com/" target="_blank" rel="noreferrer" data-github="https://github.com/">
+            <div class="cinfo-icon">🐙</div>
+            <div>
+              <div class="cinfo-label">GitHub</div>
+              <div class="cinfo-val" data-github="">github.com/alexdev</div>
             </div>
-            <div class="form-group">
-              <label class="form-label" for="cf-company" data-i18n="form.company">บริษัท</label>
-              <input class="form-input" id="cf-company" type="text" placeholder="" data-i18n-placeholder="form.companyPh">
+          </a>
+          <a class="cinfo-row" href="https://linkedin.com/" target="_blank" rel="noreferrer" data-linkedin="https://linkedin.com/">
+            <div class="cinfo-icon">💼</div>
+            <div>
+              <div class="cinfo-label">LinkedIn</div>
+              <div class="cinfo-val" data-linkedin="">linkedin.com/in/alexdev</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- FORM -->
+      <div class="reveal reveal-d2">
+        <form class="contact-form-wrap" id="contactForm" novalidate>
+          <div class="form-title">ส่งข้อความ</div>
+
+          <div class="frow">
+            <div class="fgroup">
+              <label for="cf-name">ชื่อ *</label>
+              <input id="cf-name" type="text" placeholder="ชื่อคุณ" required/>
+            </div>
+            <div class="fgroup">
+              <label for="cf-company">บริษัท</label>
+              <input id="cf-company" type="text" placeholder="ถ้ามี"/>
             </div>
           </div>
 
-          <div class="form-group">
-            <label class="form-label" for="cf-email" data-i18n="form.email">Email *</label>
-            <input class="form-input" id="cf-email" type="email" placeholder="" required data-i18n-placeholder="form.emailPh">
+          <div class="fgroup">
+            <label for="cf-email">Email *</label>
+            <input id="cf-email" type="email" placeholder="สำหรับตอบกลับ" required/>
           </div>
 
-          <div class="form-group">
-            <label class="form-label" for="cf-type" data-i18n="form.type">งานแบบไหน?</label>
-            <select class="form-select" id="cf-type"></select>
+          <div class="fgroup">
+            <label for="cf-type">งานแบบไหน?</label>
+            <select id="cf-type">
+              <option value="">เลือกได้เลย</option>
+              <option>Web Application</option>
+              <option>Mobile App</option>
+              <option>UX / UI Design</option>
+              <option>Full-Stack Development</option>
+              <option>Consulting</option>
+              <option>อื่นๆ</option>
+            </select>
           </div>
 
-          <div class="form-group">
-            <label class="form-label" for="cf-message" data-i18n="form.message">เล่าให้ฟังหน่อย *</label>
-            <textarea class="form-textarea" id="cf-message" placeholder="" required data-i18n-placeholder="form.messagePh"></textarea>
+          <div class="fgroup">
+            <label for="cf-message">เล่าให้ฟังหน่อย *</label>
+            <textarea id="cf-message" placeholder="ไม่ต้องเป็นทางการ บอก idea คร่าวๆ ก็ได้" required></textarea>
           </div>
 
-          <div class="form-alert" id="formAlert" role="status" aria-live="polite"></div>
+          <div id="formAlert" class="form-alert"></div>
 
-          <button type="submit" class="btn btn-primary form-submit">
-            <span data-i18n="form.submit">ส่งเลย</span>
-            <span aria-hidden="true">→</span>
-          </button>
+          <div class="form-submit-row">
+            <button type="submit" class="btn btn-yellow">ส่งเลย →</button>
+            <span class="form-note">ตอบกลับภายใน 24 ชม.</span>
+          </div>
         </form>
       </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <span data-i18n="footer.copy">© 2025 Alex · Full-Stack Creative Technologist</span>
-    <div class="footer-links">
-      <a id="footerGitHub" href="https://github.com/" target="_blank" rel="noreferrer" data-i18n="footer.github">GitHub</a>
-      <a id="footerLinkedIn" href="https://www.linkedin.com/" target="_blank" rel="noreferrer" data-i18n="footer.linkedin">LinkedIn</a>
-      <a href="#contact" data-i18n="footer.admin">admin</a>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script src="js/main.js"></script>
+<!-- ─── FOOTER ──────────────────────────────────────── -->
+<footer class="footer">
+  <span class="footer-copy">© 2025 Alex · Full-Stack Creative Technologist</span>
+  <div class="footer-links">
+    <a id="ftGithub" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+    <a id="ftLinkedin" href="https://linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+    <a href="admin.html">Admin</a>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
 </body>
 </html>
